@@ -219,19 +219,6 @@ public class ApiUtil {
 	 *                    (optional, may be null)
 	 * @return the response received from the GET request
 	 */
-	public CustomResponse getAdminLanguages(String endpoint, String cookieValue, Map<String, String> body) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		List<Object> ids = null;
-		List<Object> names = null;
-
-		return new CustomResponse(response, statusCode, status, ids, names);
-	}
-
 	public CustomResponse getAdminLicenses(String endpoint, String cookieValue, Map<String, String> body) {
 
 		Response response = null;
@@ -261,7 +248,7 @@ public class ApiUtil {
 	 *                    (optional, may be null)
 	 * @return the response received from the GET request
 	 */
-	public CustomResponse getAdminLicense(String endpoint, String cookieValue, Map<String, String> body) {
+	public CustomResponse getAdminLanguages(String endpoint, String cookieValue, Map<String, String> body) {
 
 		Response response = null;
 
@@ -272,35 +259,6 @@ public class ApiUtil {
 		List<Object> names = null;
 
 		return new CustomResponse(response, statusCode, status, ids, names);
-	}
-
-	/**
-	 * Executes a GET request to the given endpoint using a specified cookie and
-	 * optional request body.
-	 *
-	 * <p>
-	 * This method prepares a GET request with RestAssured, attaching a cookie named
-	 * <code>orangehrm</code> with the provided value and setting the request header
-	 * <code>Content-Type</code> to <code>application/json</code>. If the request
-	 * body is not null, it is included in the request payload.
-	 *
-	 * @param endpoint    the API endpoint to target, appended to the base URL
-	 * @param cookieValue the value for the <code>orangehrm</code> cookie
-	 * @param body        a map containing key-value pairs to be used as the request
-	 *                    body (optional)
-	 * @return the response object resulting from the GET request
-	 */
-
-	public CustomResponse GetEmpCount(String endpoint, String cookieValue, Map<String, String> body) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		int count = 0;
-
-		return new CustomResponse(response, statusCode, status, count);
 	}
 
 	/**
@@ -330,143 +288,6 @@ public class ApiUtil {
 
 		return new CustomResponse(response, statusCode, status, null);
 	}
-
-	/**
-	 * Sends a GET request to the specified API endpoint with an authentication
-	 * cookie and optional body.
-	 *
-	 * <p>
-	 * This method utilizes RestAssured to perform a GET request to the provided
-	 * endpoint. It includes a cookie named <code>orangehrm</code> with the
-	 * specified value and sets the <code>Content-Type</code> to
-	 * <code>application/json</code>. If a request body is provided, it is attached
-	 * to the request.
-	 *
-	 * @param endpoint    the relative endpoint path to be appended to the base URL
-	 * @param cookieValue the value of the <code>orangehrm</code> cookie for session
-	 *                    handling or authentication
-	 * @param body        a map containing request body parameters (optional; may be
-	 *                    null)
-	 * @return the {@code Response} object containing the results of the GET request
-	 */
-
-	public CustomResponse GetLeaveType(String endpoint, String cookieValue, Map<String, String> body) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		List<Object> ids = null;
-		List<Object> names = null;
-		List<Object> situationals = null;
-		List<Object> Deletes = null;
-
-		return new CustomResponse(response, statusCode, status, ids, names, situationals, Deletes);
-	}
-
-	/**
-	 * Performs a GET request to the specified endpoint with a provided cookie and
-	 * optional request body.
-	 *
-	 * <p>
-	 * This method constructs a GET request using RestAssured, sets the
-	 * <code>Content-Type</code> header to <code>application/json</code>, and
-	 * includes a cookie named <code>orangehrm</code>. If the provided body map is
-	 * not null, it is added to the request as the JSON payload.
-	 *
-	 * @param endpoint    the API endpoint to which the GET request will be sent,
-	 *                    appended to the base URL
-	 * @param cookieValue the value of the <code>orangehrm</code> cookie used for
-	 *                    session or auth
-	 * @param body        a map of key-value pairs representing the request body
-	 *                    (optional; may be null)
-	 * @return the {@link io.restassured.response.Response} object containing the
-	 *         server's response
-	 */
-	public CustomResponse GetUsageReport(String endpoint, String cookieValue, Map<String, String> body) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		List<Object> names = null;
-		List<Object> props = null;
-		List<Object> sizes = null;
-		List<Object> pins = null;
-		List<Object> cellProperties = null;
-
-		return new CustomResponse(response, statusCode, status, props, names, sizes, pins, cellProperties);
-	}
-
-	/**
-	 * Sends a PUT request to the specified endpoint with a cookie and optional
-	 * request body.
-	 *
-	 * <p>
-	 * This method constructs a PUT request using RestAssured, sets the
-	 * <code>Content-Type</code> header to <code>application/json</code>, and
-	 * includes a cookie named <code>orangehrm</code>. If a request body is
-	 * provided, it is attached to the request.
-	 *
-	 * @param endpoint    the relative endpoint to which the PUT request is sent,
-	 *                    appended to the base URL
-	 * @param cookieValue the value of the <code>orangehrm</code> cookie for session
-	 *                    or authorization purposes
-	 * @param requestBody an object representing the request body (can be null)
-	 * @return the {@link io.restassured.response.Response} returned from the PUT
-	 *         request
-	 */
-	@SuppressWarnings("unchecked")
-	public CustomResponse putJobTitleByID(String endpoint, String cookieValue, String requestBody) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		List<Object> ids = null;
-		List<Object> titles = null;
-		Object description = null;
-		Object note = null;
-		Map<String, Object> jobSpecification = null;
-
-		return new CustomResponse(response, statusCode, status, ids, titles, description, note, jobSpecification);
-	}
-
-	public CustomResponse PutVimEmp(String endpoint, String cookieValue, String requestBody) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		List<Object> id = null;
-		List<Object> name = null;
-		List<Object> lastName = null;
-
-		return new CustomResponse(response, statusCode, status, id, name, lastName);
-	}
-
-	/**
-	 * Sends a PUT request to the specified endpoint with a cookie and optional
-	 * request body.
-	 *
-	 * <p>
-	 * This method constructs a PUT request using RestAssured, sets the
-	 * <code>Content-Type</code> header to <code>application/json</code>, and
-	 * includes a cookie named <code>orangehrm</code>. If a request body is
-	 * provided, it is attached to the request.
-	 *
-	 * @param endpoint    the relative endpoint to which the PUT request is sent,
-	 *                    appended to the base URL
-	 * @param cookieValue the value of the <code>orangehrm</code> cookie for session
-	 *                    or authorization purposes
-	 * @param body        an object representing the request body (can be null)
-	 * @return the {@link io.restassured.response.Response} returned from the PUT
-	 *         request
-	 */
 
 	/**
 	 * Sends a POST request to the specified endpoint with a cookie and JSON string
@@ -499,6 +320,59 @@ public class ApiUtil {
 		return new CustomResponse(response, statusCode, status, title2);
 	}
 
+	/**
+	 * Sends a PUT request to the specified endpoint with a cookie and optional
+	 * request body.
+	 *
+	 * <p>
+	 * This method constructs a PUT request using RestAssured, sets the
+	 * <code>Content-Type</code> header to <code>application/json</code>, and
+	 * includes a cookie named <code>orangehrm</code>. If a request body is
+	 * provided, it is attached to the request.
+	 *
+	 * @param endpoint    the relative endpoint to which the PUT request is sent,
+	 *                    appended to the base URL
+	 * @param cookieValue the value of the <code>orangehrm</code> cookie for session
+	 *                    or authorization purposes
+	 * @param requestBody an object representing the request body (can be null)
+	 * @return the {@link io.restassured.response.Response} returned from the PUT
+	 *         request
+	 */
+	@SuppressWarnings("unchecked")
+	public CustomResponse putJobTitleByID(String endpoint, String cookieValue, String requestBody) {
+
+		Response response = null;
+
+		int statusCode = 0;
+		String status = null;
+		List<Object> ids = null;
+		List<Object> titles = null;
+		Object description = null;
+		Object note = null;
+		Map<String, Object> jobSpecification = null;
+
+		return new CustomResponse(response, statusCode, status, ids, titles, description, note, jobSpecification);
+	}
+
+	/**
+	 * Sends a PUT request to the specified endpoint with a cookie and optional
+	 * request body.
+	 *
+	 * <p>
+	 * This method constructs a PUT request using RestAssured, sets the
+	 * <code>Content-Type</code> header to <code>application/json</code>, and
+	 * includes a cookie named <code>orangehrm</code>. If a request body is
+	 * provided, it is attached to the request.
+	 *
+	 * @param endpoint    the relative endpoint to which the PUT request is sent,
+	 *                    appended to the base URL
+	 * @param cookieValue the value of the <code>orangehrm</code> cookie for session
+	 *                    or authorization purposes
+	 * @param body        an object representing the request body (can be null)
+	 * @return the {@link io.restassured.response.Response} returned from the PUT
+	 *         request
+	 */
+
 	public CustomResponse postUniquePaygrade(String endpoint, String cookieValue, String requestBody) {
 
 		Response response = null;
@@ -510,36 +384,6 @@ public class ApiUtil {
 		Object name = null;
 
 		return new CustomResponse(response, statusCode, status, id2, name);
-	}
-
-	/*
-	 * Executes a DELETE request to the specified endpoint with a cookie and JSON
-	 * string body.
-	 *
-	 * <p> This method constructs a DELETE request using RestAssured, setting the
-	 * <code>Content-Type</code> header to <code>application/json</code> and
-	 * attaching a cookie named <code>orangehrm</code>. The provided JSON string is
-	 * used as the request payload.
-	 *
-	 * @param endpoint the relative API endpoint to which the DELETE request is sent
-	 * 
-	 * @param cookieValue the value of the <code>orangehrm</code> cookie used for
-	 * session or authentication
-	 * 
-	 * @param body the request payload in JSON string format
-	 * 
-	 * @return the {@link io.restassured.response.Response} object representing the
-	 * server's response
-	 */
-
-	public CustomResponse DeletePimEmp(String endpoint, String cookieValue, String requestBody) {
-
-		Response response = null;
-
-		int statusCode = 0;
-		String status = null;
-
-		return new CustomResponse(response, statusCode, status);
 	}
 
 	/*
